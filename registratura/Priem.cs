@@ -21,5 +21,10 @@ namespace registratura
         {
             Form1.tabControl1.Controls.Remove(Form1.tabControl1.SelectedTab);
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

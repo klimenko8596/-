@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.пациентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +62,6 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.toolStrip1);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -74,16 +72,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Работа с базой данных";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(731, 17);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Здравствуйте, Администратор!";
             // 
             // toolStrip1
             // 
@@ -115,36 +103,36 @@
             // пациентыToolStripMenuItem
             // 
             this.пациентыToolStripMenuItem.Name = "пациентыToolStripMenuItem";
-            this.пациентыToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.пациентыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.пациентыToolStripMenuItem.Text = "Пациенты";
             this.пациентыToolStripMenuItem.Click += new System.EventHandler(this.пациентыToolStripMenuItem_Click);
             // 
             // врачToolStripMenuItem
             // 
             this.врачToolStripMenuItem.Name = "врачToolStripMenuItem";
-            this.врачToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.врачToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.врачToolStripMenuItem.Text = "Врачи";
             this.врачToolStripMenuItem.Click += new System.EventHandler(this.врачToolStripMenuItem_Click);
             // 
             // специализацииToolStripMenuItem
             // 
             this.специализацииToolStripMenuItem.Name = "специализацииToolStripMenuItem";
-            this.специализацииToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.специализацииToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.специализацииToolStripMenuItem.Text = "Специализации";
             this.специализацииToolStripMenuItem.Click += new System.EventHandler(this.специализацииToolStripMenuItem_Click);
             // 
             // отделенияToolStripMenuItem
             // 
             this.отделенияToolStripMenuItem.Name = "отделенияToolStripMenuItem";
-            this.отделенияToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.отделенияToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.отделенияToolStripMenuItem.Text = "Отделения";
             this.отделенияToolStripMenuItem.Click += new System.EventHandler(this.отделенияToolStripMenuItem_Click);
             // 
             // приёмToolStripMenuItem
             // 
             this.приёмToolStripMenuItem.Name = "приёмToolStripMenuItem";
-            this.приёмToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
-            this.приёмToolStripMenuItem.Text = "Приём";
+            this.приёмToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.приёмToolStripMenuItem.Text = "Мед. карта";
             this.приёмToolStripMenuItem.Click += new System.EventHandler(this.приёмToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton2
@@ -174,10 +162,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(798, 56);
+            this.button1.Location = new System.Drawing.Point(825, 42);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(135, 28);
             this.button1.TabIndex = 2;
             this.button1.Text = "Выйти";
             this.button1.UseVisualStyleBackColor = true;
@@ -186,7 +174,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(7, 33);
+            this.pictureBox1.Location = new System.Drawing.Point(7, 35);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(724, 485);
@@ -215,7 +203,6 @@
 
         public System.Windows.Forms.TabControl tabControl1;
         public System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem пациентыToolStripMenuItem;

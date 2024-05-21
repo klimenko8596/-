@@ -76,5 +76,7 @@ namespace registratura
             Form1.tabControl1.Controls.Add(form.tabControl1.TabPages[0]);
             Form1.tabControl1.SelectedIndex = Form1.tabControl1.TabCount - 1;
         }
+
+     
     }
 }

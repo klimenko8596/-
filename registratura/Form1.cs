@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 using Npgsql;
 
 namespace registratura
@@ -18,7 +19,7 @@ namespace registratura
             InitializeComponent();
         }
         public static NpgsqlConnection connection =
-    new NpgsqlConnection("Server=localhost; Port=5432; User Id=postgres; Password=admin; Database=reg;");
+    new NpgsqlConnection("Server=localhost; Port=5432; User Id=postgres; Password=admin; Database=regi;");
 
         public static DataSet ds = new DataSet();
         public static TabControl tabControl1 = new TabControl();
