@@ -35,7 +35,7 @@ namespace registratura
                 {
                     Form1.TableFill("Специализация", "SELECT * FROM  spec  ORDER BY id_spec");
 
-                    Form1.TableFill("Врачи", "SELECT * FROM vrach join spec on vrach.id_spec = spec.id_spec join otd on vrach.id_otd = otd.id_otd  ORDER BY id_vrach");
+                    Form1.TableFill("Врачи", "SELECT vrach.fam, vrach.nam, vrach.otch, vrach.dat_r, otd.nazv, vrach.kab, spec.nazv, vrach.login, vrach.password FROM vrach join spec on vrach.id_spec = spec.id_spec join otd on vrach.id_otd = otd.id_otd  ORDER BY id_vrach");
 
                     Form1.TableFill("Пациенты", "SELECT * FROM pac  ORDER BY id_pac");
 
