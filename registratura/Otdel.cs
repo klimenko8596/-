@@ -40,29 +40,7 @@ namespace registratura
             Form1.tabControl1.Controls.Remove(Form1.tabControl1.SelectedTab);
         }
 
-        private void tabPage1_Paint(object sender, PaintEventArgs e)
-        {
-
-            string sql = "SELECT otd.id_otd AS \"Код отделения\", otd.nazv" +
-                " AS \"Название\", otd.zav AS \"Заведующий отделения\"" +
-                " FROM otd LEFT JOIN vrach on vrach.id_otd = otd.id_otd ORDER BY \"Код отделения\"";
-
-
-            Form1.TableFill("Отделения", sql);
-            Form1.ds.Tables["Отделения"].DefaultView.Sort = "Название";
-            dataGridView1.DataSource = Form1.ds.Tables["Отделения"].DefaultView;
-            dataGridView1.Columns["id_otd"].Visible = false;
-            dataGridView1.Columns["nazv"].Visible = false;
-            dataGridView1.Columns["zav"].Visible = false;
-            dataGridView1.Columns["Код отделения"].Visible = false;
-            dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.Enabled = false;
-            dataGridView1.AutoResizeColumns();
-            dataGridView1.CurrentCell = null;
-        }
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -100,12 +78,59 @@ namespace registratura
 
         private void button8_Click(object sender, EventArgs e)
         {
+            string sql;
+            if (n < Form1.ds.Tables["Отделения"].Rows.Count)
+            {
+                sql = "update otd set nazv='" + textBox2.Text + "', zav='" + textBox3.Text + "' where id_otd=" + textBox1.Text;
+                if (!Form1.ModificationExecute(sql))
+                {
+                    return;
+                }
 
+                Form1.ds.Tables["Отделения"].Rows[n].ItemArray = new object[] { textBox1.Text, textBox2.Text, textBox3.Text };
+            }
+
+            else
+            {
+                sql = "insert into otd(id_otd, nazv, zav) values(" + textBox1.Text + ",'" + textBox2.Text + "','" + textBox3.Text + "')";
+
+                if (!Form1.ModificationExecute(sql))
+                { return; }
+
+                Form1.ds.Tables["Отделения"].Rows.Add(new object[] { textBox1.Text, textBox2.Text, textBox3.Text });
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            string message = "Вы точно хотите удалить из справочника отделение с кодом " + textBox1.Text + "?";
+            string caption = "Удаление отделения";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, caption, buttons);
+            if (result == DialogResult.No) { return; }
+            Form1.TableFill("Врачи", "select * from vrach");
 
+            for (int i = 0; i < Form1.ds.Tables["Врачи"].DefaultView.Count; i++)
+                if (Form1.ds.Tables["Врачи"].DefaultView[i]["id_otd"].ToString() == textBox1.Text)
+                {
+                    MessageBox.Show("Отделение\"" + textBox2.Text + "\" входит в состав информации о враче с кодом " +
+                        Form1.ds.Tables["Врачи"].DefaultView[i]["id_vrach"].ToString(), "Ошибка удаления");
+                    return;
+                }
+
+            string sql = "delete from otd where id_otd=" + textBox1.Text;
+            Form1.ModificationExecute(sql);
+
+            Form1.ds.Tables["Отделения"].Rows.RemoveAt(n);
+
+            if (Form1.ds.Tables["Отделения"].Rows.Count > n)
+            {
+                FieldsForm_Fill();
+            }
+            else
+            {
+                FieldsForm_Clear();
+            }
         }
 
         private void tabPage1_Enter(object sender, EventArgs e)

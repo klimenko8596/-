@@ -35,13 +35,13 @@ namespace registratura
                 {
                     Form1.TableFill("Специализация", "SELECT * FROM  spec  ORDER BY id_spec");
 
-                    Form1.TableFill("Врачи", "SELECT vrach.fam, vrach.nam, vrach.otch, vrach.dat_r, otd.nazv, vrach.kab, spec.nazv, vrach.login, vrach.password FROM vrach join spec on vrach.id_spec = spec.id_spec join otd on vrach.id_otd = otd.id_otd  ORDER BY id_vrach");
+                    Form1.TableFill("Врачи", "SELECT vrach.id_vrach, vrach.fam, vrach.nam, vrach.otch, vrach.dat_r, otd.nazv as id_otd, vrach.kab, spec.nazv as id_spec, vrach.login, vrach.password, concat(fam, ' ', nam, ' ', otch) as fio FROM vrach join spec on vrach.id_spec = spec.id_spec join otd on vrach.id_otd = otd.id_otd  ORDER BY id_vrach");
 
-                    Form1.TableFill("Пациенты", "SELECT * FROM pac  ORDER BY id_pac");
+                    Form1.TableFill("Пациенты", "SELECT id_pac, fam, nam, otch, pol, dat_r, polic, snils, ser_nom, obl, reg, gorod, yl, dom, kvar, concat(fam, ' ', nam, ' ', otch) as fio FROM pac  ORDER BY id_pac");
 
                     Form1.TableFill("Отделения", "SELECT * FROM otd  ORDER BY id_otd");
 
-                    Form1.TableFill("Мед. карта", "SELECT * FROM med join vrach on med.id_vrach = vrach.id_vrach join pac on med.id_pac = pac.id_pac order by med");
+                    Form1.TableFill("Мед. карта", "SELECT id_med, concat(pac.fam, ' ', pac.nam, ' ', pac.otch) as id_pac, concat(vrach.fam, ' ', vrach.nam, ' ', vrach.otch) as id_vrach, dat_pr, simp, diag, lekar, comment FROM med join vrach on med.id_vrach = vrach.id_vrach join pac on med.id_pac = pac.id_pac order by id_med");
 
 
                     Form3 menu = new Form3();

@@ -116,7 +116,7 @@ namespace registratura
             Form1.TableFill("Врачи", "select * from vrach");
 
             for (int i = 0; i < Form1.ds.Tables["Врачи"].DefaultView.Count; i++)
-                if (Form1.ds.Tables["Врачи"].DefaultView[i]["id_otd"].ToString() == textBox1.Text)
+                if (Form1.ds.Tables["Врачи"].DefaultView[i]["id_spec"].ToString() == textBox1.Text)
                 {
                     MessageBox.Show("Специальность\"" + textBox2.Text + "\" входит в состав информации о враче с кодом " +
                         Form1.ds.Tables["Врачи"].DefaultView[i]["id_vrach"].ToString(), "Ошибка удаления");

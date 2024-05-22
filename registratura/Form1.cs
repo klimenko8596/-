@@ -19,7 +19,7 @@ namespace registratura
             InitializeComponent();
         }
         public static NpgsqlConnection connection =
-    new NpgsqlConnection("Server=localhost; Port=5432; User Id=postgres; Password=admin; Database=regi;");
+    new NpgsqlConnection("Server=localhost; Port=5432; User Id=postgres; Password=admin; Database=test20;");
 
         public static DataSet ds = new DataSet();
         public static TabControl tabControl1 = new TabControl();

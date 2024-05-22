@@ -43,7 +43,7 @@ namespace registratura
 
         private void учётМедицинскихКартToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pas form = new Pas();
+            Med_kard form = new Med_kard();
             Form1.tabControl1.Controls.Add(form.tabControl1.TabPages[0]);
             Form1.tabControl1.SelectedIndex = Form1.tabControl1.TabCount - 1;
         }
