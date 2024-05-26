@@ -33,7 +33,7 @@ namespace registratura
         {
             Form1.TableFill("Журнал", "SELECT id_med as \"Код карты\", concat(pac.fam, ' ', pac.nam, ' ', pac.otch) " +
                 "as \"ФИО пациента\", concat(vrach.fam, ' ', vrach.nam, ' ', vrach.otch) as \"ФИО врача\", dat_pr as \"Дата приёма\"," +
-                " simp as \"Симптомы\", diag as \"Диагноз\", lekar as \"Лекарства\"," +
+                " simp as \"Симптомы\", diag as \"Диагноз\", lekar as \"Лекарства\"" +
                 " FROM med join vrach on med.id_vrach = vrach.id_vrach join pac on med.id_pac = pac.id_pac order by \"Код карты\"");
 
 
