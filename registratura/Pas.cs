@@ -124,16 +124,28 @@ namespace registratura
                     "', yl='" + textBox12.Text +
                     "', dom='" + textBox13.Text + 
                     "', kvar='" + textBox14.Text + 
-                    "' where id_pac=" + textBox1.Text;
+                    "' where id_pac=" + textBox1.Text + "";
                 if (!Form1.ModificationExecute(sql))
-                {
+                
                     return;
-                }
+                
 
-                Form1.ds.Tables["Пациенты"].Rows[n].ItemArray = new object[] { textBox1.Text, textBox2.Text,
-                textBox6.Text, textBox9.Text, textBox3.Text, dateTimePicker1.Value, textBox4.Text, textBox7.Text, 
-                    textBox8.Text, textBox5.Text,
-                textBox10.Text,  textBox11.Text, textBox12.Text, textBox13.Text, textBox14.Text};
+                Form1.ds.Tables["Пациенты"].Rows[n].ItemArray = new object[] { 
+                    textBox1.Text, 
+                    textBox2.Text,
+                    textBox6.Text, 
+                    textBox9.Text, 
+                    textBox3.Text, 
+                    dateTimePicker1.Value, 
+                    textBox4.Text, 
+                    textBox7.Text, 
+                    textBox8.Text, 
+                    textBox5.Text,
+                    textBox10.Text,  
+                    textBox11.Text, 
+                    textBox12.Text, 
+                    textBox13.Text, 
+                    textBox14.Text};
             }
 
             else
@@ -150,6 +162,7 @@ namespace registratura
                 textBox6.Text, textBox9.Text, textBox3.Text, dateTimePicker1.Value, textBox4.Text, textBox7.Text,
                 textBox8.Text, textBox5.Text, textBox10.Text, textBox11.Text, textBox12.Text, textBox13.Text, textBox14.Text});
             }
+         
         }
 
         private void button6_Click(object sender, EventArgs e)
