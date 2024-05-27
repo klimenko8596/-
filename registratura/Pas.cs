@@ -110,12 +110,21 @@ namespace registratura
             string sql;
             if (n < Form1.ds.Tables["Пациенты"].Rows.Count)
             {
-                sql = "update pac set fam='" + textBox2.Text + "', nam='" + textBox6.Text + "', otch='" + textBox9.Text +
-                    "', pol='" + textBox3.Text + "', dat_r='" + dateTimePicker1.Value
-                    + "', polic='" + textBox4.Text  +
-                    "', snils='" + textBox7.Text + "', ser_nom='" + textBox8.Text + "', obl='" + textBox5.Text +
-                    "', reg='" + textBox10.Text + "', gorod='" + textBox11.Text + "', yl='" + textBox12.Text +
-                    "', dom='" + textBox13.Text + "', kvar='" + textBox14.Text + "' where id_pac=" + textBox1.Text;
+                sql = "update pac set fam='" + textBox2.Text + 
+                    "', nam='" + textBox6.Text + 
+                    "', otch='" + textBox9.Text +
+                    "', pol='" + textBox3.Text + 
+                    "', dat_r='" + dateTimePicker1.Value+ 
+                    "', polic='" + textBox4.Text  +
+                    "', snils='" + textBox7.Text + 
+                    "', ser_nom='" + textBox8.Text + 
+                    "', obl='" + textBox5.Text +
+                    "', reg='" + textBox10.Text + 
+                    "', gorod='" + textBox11.Text + 
+                    "', yl='" + textBox12.Text +
+                    "', dom='" + textBox13.Text + 
+                    "', kvar='" + textBox14.Text + 
+                    "' where id_pac=" + textBox1.Text;
                 if (!Form1.ModificationExecute(sql))
                 {
                     return;

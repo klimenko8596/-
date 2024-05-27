@@ -29,6 +29,7 @@ namespace registratura
         private void button1_Click(object sender, EventArgs e)
         {
 
+
             if (textBox1.Text == "Admin")
             {
                 if (textBox2.Text == "Admin")
@@ -55,6 +56,37 @@ namespace registratura
                 else
                 {
                     MessageBox.Show("Неправильный пароль");
+                }
+            }
+
+            else
+            {
+                string sql = "select * from vrach";
+                Form1.TableFill("Врачи", sql);
+                Form1.ds.Tables["Врачи"].DefaultView.RowFilter = "login = '" + textBox1.Text + "'";
+
+                for (int i = 0; i < Form1.ds.Tables["Врачи"].DefaultView.Count; i++)
+                {
+                    if (Form1.ds.Tables["Врачи"].DefaultView[i]["password"].ToString() == textBox2.Text)
+                    {
+
+
+                        Form1.TableFill("Мед. карта", "SELECT id_med, concat(pac.fam, ' ', pac.nam, ' ', pac.otch) as id_pac, concat(vrach.fam, ' ', vrach.nam, ' ', vrach.otch) as id_vrach, dat_pr, simp, diag, lekar, comment FROM med join vrach on med.id_vrach = vrach.id_vrach join pac on med.id_pac = pac.id_pac order by id_med");
+                        Form1.TableFill("Пациенты", "SELECT id_pac, fam, nam, otch, pol, dat_r, polic, snils, ser_nom, obl, reg, gorod, yl, dom, kvar, concat(fam, ' ', nam, ' ', otch) as fio FROM pac  ORDER BY id_pac");
+
+                        Form4 menu2 = new Form4();
+                        this.Size = new Size(872, 470);
+
+
+
+                        Form1.tabControl1.TabPages.RemoveAt(0);
+                        Form1.tabControl1.Controls.Add(menu2.tabControl1.TabPages[0]);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неправильный пароль");
+                    }
                 }
             }
         }
