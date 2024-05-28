@@ -131,6 +131,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Пациенты";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
             // 
             // label12
             // 

@@ -26,7 +26,7 @@ namespace registratura
 
         private void пациентыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pas form = new Pas();
+            Pas_v form = new Pas_v();
             Form1.tabControl1.Controls.Add(form.tabControl1.TabPages[0]);
             Form1.tabControl1.SelectedIndex = Form1.tabControl1.TabCount - 1;
         }
