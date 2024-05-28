@@ -23,7 +23,7 @@ namespace registratura
             textBox1.Text = Form1.ds.Tables["Специализация"].Rows[n]["id_spec"].ToString();
             textBox2.Text = Form1.ds.Tables["Специализация"].Rows[n]["nazv"].ToString();
             textBox3.Text = Form1.ds.Tables["Специализация"].Rows[n]["opis"].ToString();
-           
+            textBox1.Enabled = false;
         }
         private void FieldsForm_Clear()
         {
@@ -31,7 +31,7 @@ namespace registratura
             textBox2.Text = "";
             textBox3.Text = "";
             textBox1.Focus();
-
+            textBox1.Enabled = true;
         }
         private void button7_Click(object sender, EventArgs e)
         {
