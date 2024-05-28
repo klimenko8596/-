@@ -35,6 +35,7 @@ namespace registratura
             textBox12.Text = Form1.ds.Tables["Пациенты"].Rows[n]["yl"].ToString();
             textBox13.Text = Form1.ds.Tables["Пациенты"].Rows[n]["dom"].ToString();
             textBox14.Text = Form1.ds.Tables["Пациенты"].Rows[n]["kvar"].ToString();
+            textBox1.Enabled = false;
         }
         private void FieldsForm_Clear()
         {
@@ -54,6 +55,7 @@ namespace registratura
             textBox13.Text = "";
             textBox14.Text = "";
             textBox1.Focus();
+            textBox1.Enabled = true;
 
         }
 
