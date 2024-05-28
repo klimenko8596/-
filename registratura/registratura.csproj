@@ -137,6 +137,12 @@
     <Compile Include="Pas.Designer.cs">
       <DependentUpon>Pas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pas_v.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pas_v.Designer.cs">
+      <DependentUpon>Pas_v.cs</DependentUpon>
+    </Compile>
     <Compile Include="Priem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pas.resx">
       <DependentUpon>Pas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pas_v.resx">
+      <DependentUpon>Pas_v.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Priem.resx">
       <DependentUpon>Priem.cs</DependentUpon>
