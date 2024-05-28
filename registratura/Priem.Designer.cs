@@ -132,7 +132,7 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox6.Location = new System.Drawing.Point(164, 238);
+            this.textBox6.Location = new System.Drawing.Point(164, 274);
             this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(464, 26);
@@ -161,10 +161,11 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox4.Location = new System.Drawing.Point(164, 277);
+            this.textBox4.Location = new System.Drawing.Point(164, 158);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(464, 26);
+            this.textBox4.Size = new System.Drawing.Size(464, 59);
             this.textBox4.TabIndex = 21;
             // 
             // label6
@@ -205,11 +206,10 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox5.Location = new System.Drawing.Point(164, 158);
+            this.textBox5.Location = new System.Drawing.Point(164, 235);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(464, 58);
+            this.textBox5.Size = new System.Drawing.Size(464, 26);
             this.textBox5.TabIndex = 17;
             // 
             // textBox1
