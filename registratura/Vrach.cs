@@ -31,6 +31,7 @@ namespace registratura
             comboBox1.Text = Form1.ds.Tables["Врачи"].Rows[n]["id_spec"].ToString();
             textBox2.Text = Form1.ds.Tables["Врачи"].Rows[n]["login"].ToString();
             textBox5.Text = Form1.ds.Tables["Врачи"].Rows[n]["password"].ToString();
+            textBox1.Enabled = false;
 
         }
         private void FieldsForm_Clear()
@@ -46,6 +47,7 @@ namespace registratura
             textBox2.Text = "";
             textBox5.Text = "";
             textBox1.Focus();
+            textBox1.Enabled = true;
 
         }
         private void button7_Click(object sender, EventArgs e)
