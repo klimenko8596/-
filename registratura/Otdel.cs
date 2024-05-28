@@ -24,13 +24,14 @@ namespace registratura
             textBox1.Text = Form1.ds.Tables["Отделения"].Rows[n]["id_otd"].ToString();
             textBox2.Text = Form1.ds.Tables["Отделения"].Rows[n]["nazv"].ToString();
             textBox3.Text = Form1.ds.Tables["Отделения"].Rows[n]["zav"].ToString();
+            textBox1.Enabled = false;
         }
         private void FieldsForm_Clear()
         {
             textBox1.Text = "0";
             textBox2.Text = "";
             textBox3.Text = "";
-            textBox1.Focus();
+            textBox1.Focus(); textBox1.Enabled = true;
 
         }
 
