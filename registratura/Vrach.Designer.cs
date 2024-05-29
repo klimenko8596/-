@@ -197,6 +197,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(144, 181);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -245,6 +246,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(191, 243);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

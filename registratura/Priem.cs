@@ -42,6 +42,7 @@ namespace registratura
             textBox6.Text = "";
             textBox7.Text = "";
             textBox1.Focus(); textBox1.Enabled = true;
+          
 
         }
 
