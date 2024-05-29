@@ -174,5 +174,19 @@ namespace registratura
                 FieldsForm_Clear();
             }
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form1.tabControl1.Controls.Remove(Form1.tabControl1.SelectedTab);
+            poisk_vrach poisk_vrach = new poisk_vrach();
+            this.Size = new Size(872, 470);
+
+            if (Form1.tabControl1.TabCount > 2)
+            {
+                Form1.tabControl1.TabPages.RemoveAt(Form1.tabControl1.TabCount - 1);
+            }
+            Form1.tabControl1.Controls.Add(poisk_vrach.tabControl1.TabPages[0]);
+            Form1.tabControl1.SelectedIndex = Form1.tabControl1.TabCount - 1;
+        }
     }
 }

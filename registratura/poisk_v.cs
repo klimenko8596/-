@@ -47,8 +47,8 @@ namespace registratura
         {
             Form1.tabControl1.Controls.Remove(Form1.tabControl1.SelectedTab);
 
-            Pas.n = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Код карты"].Value.ToString());
-            Pas pas = new Pas();
+            Pas_v.n = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Код карты"].Value.ToString());
+            Pas_v pas = new Pas_v();
 
             if (Form1.tabControl1.TabCount > 2)
             {

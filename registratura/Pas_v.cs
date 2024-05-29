@@ -109,14 +109,14 @@ namespace registratura
         private void button8_Click(object sender, EventArgs e)
         {
             Form1.tabControl1.Controls.Remove(Form1.tabControl1.SelectedTab);
-            poick_p poick = new poick_p();
+            poisk_v poisk_v = new poisk_v();
             this.Size = new Size(872, 470);
 
             if (Form1.tabControl1.TabCount > 2)
             {
                 Form1.tabControl1.TabPages.RemoveAt(Form1.tabControl1.TabCount - 1);
             }
-            Form1.tabControl1.Controls.Add(poick.tabControl1.TabPages[0]);
+            Form1.tabControl1.Controls.Add(poisk_v.tabControl1.TabPages[0]);
             Form1.tabControl1.SelectedIndex = Form1.tabControl1.TabCount - 1;
         }
     }
