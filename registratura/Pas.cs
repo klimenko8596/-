@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace registratura
 {
@@ -198,6 +199,16 @@ namespace registratura
             {
                 FieldsForm_Clear();
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+            poick_p poick = new poick_p();
+            this.Size = new Size(872, 470);
+
+            Form1.tabControl1.TabPages.RemoveAt(0);
+            Form1.tabControl1.Controls.Add(poick.tabControl1.TabPages[0]);
         }
     }
 }
