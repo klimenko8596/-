@@ -48,7 +48,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(976, 554);
             this.tabControl1.TabIndex = 4;
-            this.tabControl1.Enter += new System.EventHandler(this.tabControl1_Enter);
             // 
             // tabPage1
             // 
@@ -64,6 +63,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Пациенты";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
             // 
             // dataGridView1
             // 
