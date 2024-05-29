@@ -149,6 +149,18 @@
     <Compile Include="poick_p.Designer.cs">
       <DependentUpon>poick_p.cs</DependentUpon>
     </Compile>
+    <Compile Include="poisk_v.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="poisk_v.Designer.cs">
+      <DependentUpon>poisk_v.cs</DependentUpon>
+    </Compile>
+    <Compile Include="poisk_vrach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="poisk_vrach.Designer.cs">
+      <DependentUpon>poisk_vrach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Priem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="poick_p.resx">
       <DependentUpon>poick_p.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="poisk_v.resx">
+      <DependentUpon>poisk_v.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="poisk_vrach.resx">
+      <DependentUpon>poisk_vrach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Priem.resx">
       <DependentUpon>Priem.cs</DependentUpon>
