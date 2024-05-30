@@ -59,5 +59,10 @@ namespace registratura
 
             this.AcceptButton = button7;
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form1.tabControl1.Controls.Remove(Form1.tabControl1.SelectedTab);
+        }
     }
 }
