@@ -51,8 +51,8 @@ namespace registratura
         {
             Form1.tabControl1.Controls.Remove(Form1.tabControl1.SelectedTab);
 
-            Pas.n = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Код карты"].Value.ToString());
-            Pas pas = new Pas();
+            poisk_p_pas.n = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Код карты"].Value.ToString();
+            poisk_p_pas pas_p = new poisk_p_pas();
 
             if (Form1.tabControl1.TabCount > 2)
             {
@@ -60,7 +60,7 @@ namespace registratura
                 Form1.tabControl1.TabPages.RemoveAt(Form1.tabControl1.TabCount - 1);
             }
 
-            Form1.tabControl1.Controls.Add(pas.tabControl1.TabPages[0]);
+            Form1.tabControl1.Controls.Add(pas_p.tabControl1.TabPages[0]);
             Form1.tabControl1.SelectedIndex = Form1.tabControl1.TabCount - 1;
         }
 

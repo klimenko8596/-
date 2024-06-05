@@ -17,25 +17,26 @@ namespace registratura
             InitializeComponent();
         }
         public static string n = null;
-        public static int i = 0;
+   
         private void FieldsForm_Fill()
         {
-            textBox1.Text = Form1.ds.Tables["Пациенты"].Rows[n]["id_pac"].ToString();
-            textBox2.Text = Form1.ds.Tables["Пациенты"].Rows[n]["fam"].ToString();
-            textBox3.Text = Form1.ds.Tables["Пациенты"].Rows[n]["pol"].ToString();
-            if (Form1.ds.Tables["Пациенты"].Rows[n]["dat_r"] != DBNull.Value)
-                dateTimePicker1.Value = Convert.ToDateTime(Form1.ds.Tables["Пациенты"].Rows[n]["dat_r"]);
-            textBox4.Text = Form1.ds.Tables["Пациенты"].Rows[n]["polic"].ToString();
-            textBox5.Text = Form1.ds.Tables["Пациенты"].Rows[n]["obl"].ToString();
-            textBox6.Text = Form1.ds.Tables["Пациенты"].Rows[n]["nam"].ToString();
-            textBox7.Text = Form1.ds.Tables["Пациенты"].Rows[n]["snils"].ToString();
-            textBox8.Text = Form1.ds.Tables["Пациенты"].Rows[n]["ser_nom"].ToString();
-            textBox9.Text = Form1.ds.Tables["Пациенты"].Rows[n]["otch"].ToString();
-            textBox10.Text = Form1.ds.Tables["Пациенты"].Rows[n]["reg"].ToString();
-            textBox11.Text = Form1.ds.Tables["Пациенты"].Rows[n]["gorod"].ToString();
-            textBox12.Text = Form1.ds.Tables["Пациенты"].Rows[n]["yl"].ToString();
-            textBox13.Text = Form1.ds.Tables["Пациенты"].Rows[n]["dom"].ToString();
-            textBox14.Text = Form1.ds.Tables["Пациенты"].Rows[n]["kvar"].ToString();
+            int i = 0;
+            textBox1.Text = Form1.ds.Tables["Пациенты"].Rows[i]["id_pac"].ToString();
+            textBox2.Text = Form1.ds.Tables["Пациенты"].Rows[i]["fam"].ToString();
+            textBox3.Text = Form1.ds.Tables["Пациенты"].Rows[i]["pol"].ToString();
+            if (Form1.ds.Tables["Пациенты"].Rows[i]["dat_r"] != DBNull.Value)
+                dateTimePicker1.Value = Convert.ToDateTime(Form1.ds.Tables["Пациенты"].Rows[i]["dat_r"]);
+            textBox4.Text = Form1.ds.Tables["Пациенты"].Rows[i]["polic"].ToString();
+            textBox5.Text = Form1.ds.Tables["Пациенты"].Rows[i]["obl"].ToString();
+            textBox6.Text = Form1.ds.Tables["Пациенты"].Rows[i]["nam"].ToString();
+            textBox7.Text = Form1.ds.Tables["Пациенты"].Rows[i]["snils"].ToString();
+            textBox8.Text = Form1.ds.Tables["Пациенты"].Rows[i]["ser_nom"].ToString();
+            textBox9.Text = Form1.ds.Tables["Пациенты"].Rows[i]["otch"].ToString();
+            textBox10.Text = Form1.ds.Tables["Пациенты"].Rows[i]["reg"].ToString();
+            textBox11.Text = Form1.ds.Tables["Пациенты"].Rows[i]["gorod"].ToString();
+            textBox12.Text = Form1.ds.Tables["Пациенты"].Rows[i]["yl"].ToString();
+            textBox13.Text = Form1.ds.Tables["Пациенты"].Rows[i]["dom"].ToString();
+            textBox14.Text = Form1.ds.Tables["Пациенты"].Rows[i]["kvar"].ToString();
             textBox1.Enabled = false;
         }
         private void FieldsForm_Clear()
@@ -63,7 +64,25 @@ namespace registratura
 
         private void tabPage1_Enter(object sender, EventArgs e)
         {
-
+            int i = 0;
+            while (Form1.ds.Tables["Пациенты"].Rows[i]["id_pac"].ToString() != n) i++;
+            textBox1.Text = Form1.ds.Tables["Пациенты"].Rows[i]["id_pac"].ToString();
+            textBox2.Text = Form1.ds.Tables["Пациенты"].Rows[i]["fam"].ToString();
+            textBox3.Text = Form1.ds.Tables["Пациенты"].Rows[i]["pol"].ToString();
+            if (Form1.ds.Tables["Пациенты"].Rows[i]["dat_r"] != DBNull.Value)
+                dateTimePicker1.Value = Convert.ToDateTime(Form1.ds.Tables["Пациенты"].Rows[i]["dat_r"]);
+            textBox4.Text = Form1.ds.Tables["Пациенты"].Rows[i]["polic"].ToString();
+            textBox5.Text = Form1.ds.Tables["Пациенты"].Rows[i]["obl"].ToString();
+            textBox6.Text = Form1.ds.Tables["Пациенты"].Rows[i]["nam"].ToString();
+            textBox7.Text = Form1.ds.Tables["Пациенты"].Rows[i]["snils"].ToString();
+            textBox8.Text = Form1.ds.Tables["Пациенты"].Rows[i]["ser_nom"].ToString();
+            textBox9.Text = Form1.ds.Tables["Пациенты"].Rows[i]["otch"].ToString();
+            textBox10.Text = Form1.ds.Tables["Пациенты"].Rows[i]["reg"].ToString();
+            textBox11.Text = Form1.ds.Tables["Пациенты"].Rows[i]["gorod"].ToString();
+            textBox12.Text = Form1.ds.Tables["Пациенты"].Rows[i]["yl"].ToString();
+            textBox13.Text = Form1.ds.Tables["Пациенты"].Rows[i]["dom"].ToString();
+            textBox14.Text = Form1.ds.Tables["Пациенты"].Rows[i]["kvar"].ToString();
+            textBox1.Enabled = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -74,8 +93,7 @@ namespace registratura
         private void button5_Click(object sender, EventArgs e)
         {
             string sql;
-            if (n < Form1.ds.Tables["Пациенты"].Rows.Count)
-            {
+           
                 sql = "update pac set fam='" + textBox2.Text +
                     "', nam='" + textBox6.Text +
                     "', otch='" + textBox9.Text +
@@ -93,11 +111,12 @@ namespace registratura
                     "' where id_pac=" + textBox1.Text + "";
                 Form1.ModificationExecute(sql);
 
-            }
+            
         }
 
             private void button6_Click(object sender, EventArgs e)
         {
+            int v = 0;
 
             string message = "Вы точно хотите удалить из справочника пациента с кодом " + textBox1.Text + "?";
             string caption = "Удаление пациента";
@@ -117,9 +136,9 @@ namespace registratura
             string sql = "delete from pac where id_pac=" + textBox1.Text;
             Form1.ModificationExecute(sql);
 
-            Form1.ds.Tables["Пациенты"].Rows.RemoveAt(n);
+            Form1.ds.Tables["Пациенты"].Rows.RemoveAt(v);
 
-            if (Form1.ds.Tables["Пациенты"].Rows.Count > n)
+            if (Form1.ds.Tables["Пациенты"].Rows.Count > v)
             {
                 FieldsForm_Fill();
             }
