@@ -161,6 +161,12 @@
     <Compile Include="poisk_vrach.Designer.cs">
       <DependentUpon>poisk_vrach.cs</DependentUpon>
     </Compile>
+    <Compile Include="poisk_v_pac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="poisk_v_pac.Designer.cs">
+      <DependentUpon>poisk_v_pac.cs</DependentUpon>
+    </Compile>
     <Compile Include="Priem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,12 @@
     </Compile>
     <Compile Include="Vrach.Designer.cs">
       <DependentUpon>Vrach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vrach_poisk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vrach_poisk.Designer.cs">
+      <DependentUpon>vrach_poisk.cs</DependentUpon>
     </Compile>
     <Compile Include="Ychet_priem.cs">
       <SubType>Form</SubType>
@@ -220,6 +232,9 @@
     <EmbeddedResource Include="poisk_vrach.resx">
       <DependentUpon>poisk_vrach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="poisk_v_pac.resx">
+      <DependentUpon>poisk_v_pac.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Priem.resx">
       <DependentUpon>Priem.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vrach.resx">
       <DependentUpon>Vrach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vrach_poisk.resx">
+      <DependentUpon>vrach_poisk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ychet_priem.resx">
       <DependentUpon>Ychet_priem.cs</DependentUpon>

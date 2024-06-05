@@ -27,8 +27,8 @@ namespace registratura
         {
             Form1.tabControl1.Controls.Remove(Form1.tabControl1.SelectedTab);
 
-            Vrach.n = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Код врача"].Value.ToString());
-            Vrach vrach = new Vrach();
+            vrach_poisk.n = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Код врача"].Value.ToString();
+            vrach_poisk vrach_pois = new vrach_poisk();
 
             if (Form1.tabControl1.TabCount > 2)
             {
@@ -36,7 +36,7 @@ namespace registratura
                 Form1.tabControl1.TabPages.RemoveAt(Form1.tabControl1.TabCount - 1);
             }
 
-            Form1.tabControl1.Controls.Add(vrach.tabControl1.TabPages[0]);
+            Form1.tabControl1.Controls.Add(vrach_pois.tabControl1.TabPages[0]);
             Form1.tabControl1.SelectedIndex = Form1.tabControl1.TabCount - 1;
         }
 

@@ -24,23 +24,7 @@ namespace registratura
             Form1.ds.Tables["Журнал"].DefaultView.RowFilter = "ФИО like'%" + textBox1.Text + "%'";
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Form1.tabControl1.Controls.Remove(Form1.tabControl1.SelectedTab);
-
-            Pas_v.n = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Код карты"].Value.ToString());
-            Pas_v pas = new Pas_v();
-
-            if (Form1.tabControl1.TabCount > 2)
-            {
-
-                Form1.tabControl1.TabPages.RemoveAt(Form1.tabControl1.TabCount - 1);
-            }
-
-            Form1.tabControl1.Controls.Add(pas.tabControl1.TabPages[0]);
-            Form1.tabControl1.SelectedIndex = Form1.tabControl1.TabCount - 1;
-        }
-
+     
         private void tabPage1_Enter(object sender, EventArgs e)
         {
 
@@ -65,6 +49,23 @@ namespace registratura
         private void button7_Click(object sender, EventArgs e)
         {
             Form1.tabControl1.Controls.Remove(Form1.tabControl1.SelectedTab);
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Form1.tabControl1.Controls.Remove(Form1.tabControl1.SelectedTab);
+
+            poisk_v_pac.n = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["Код карты"].Value.ToString();
+            poisk_v_pac poisk_v_p = new poisk_v_pac();
+
+            if (Form1.tabControl1.TabCount > 2)
+            {
+
+                Form1.tabControl1.TabPages.RemoveAt(Form1.tabControl1.TabCount - 1);
+            }
+
+            Form1.tabControl1.Controls.Add(poisk_v_p.tabControl1.TabPages[0]);
+            Form1.tabControl1.SelectedIndex = Form1.tabControl1.TabCount - 1;
         }
     }
 }

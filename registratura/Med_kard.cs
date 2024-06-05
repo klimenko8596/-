@@ -31,10 +31,10 @@ namespace registratura
 
         private void tabPage1_Enter(object sender, EventArgs e)
         {
-            Form1.TableFill("Журнал", "SELECT id_med as \"Код карты\", concat(pac.fam, ' ', pac.nam, ' ', pac.otch) " +
-                "as \"ФИО пациента\", concat(vrach.fam, ' ', vrach.nam, ' ', vrach.otch) as \"ФИО врача\", dat_pr as \"Дата приёма\"," +
-                " simp as \"Симптомы\", diag as \"Диагноз\", lekar as \"Лечение\"" +
-                " FROM med join vrach on med.id_vrach = vrach.id_vrach join pac on med.id_pac = pac.id_pac order by \"Код карты\"");
+            Form1.TableFill("Журнал", "SELECT id_pac as \"Код карты\", concat(pac.fam, ' ', pac.nam, ' ', pac.otch) " +
+                "as \"ФИО пациента\", dat_r as \"Дата рождения\"," +
+                " pol as \"Пол\", snils as \"Снилс\", polic as \"Полюс\"" +
+                " FROM pac order by \"Код карты\"");
 
 
             dataGridView1.DataSource = Form1.ds.Tables["Журнал"].DefaultView;
@@ -63,11 +63,10 @@ namespace registratura
 
             Sheet_.Cells[2, 1].Value = dataGridView1.Columns["Код карты"].HeaderText;
             Sheet_.Cells[2, 2].Value = dataGridView1.Columns["ФИО пациента"].HeaderText;
-            Sheet_.Cells[2, 3].Value = dataGridView1.Columns["ФИО врача"].HeaderText;
-            Sheet_.Cells[2, 4].Value = dataGridView1.Columns["Дата приёма"].HeaderText;
-            Sheet_.Cells[2, 5].Value = dataGridView1.Columns["Симптомы"].HeaderText;
-            Sheet_.Cells[2, 6].Value = dataGridView1.Columns["Диагноз"].HeaderText;
-            Sheet_.Cells[2, 7].Value = dataGridView1.Columns["Лекарства"].HeaderText;
+            Sheet_.Cells[2, 3].Value = dataGridView1.Columns["Дата рождения"].HeaderText;
+            Sheet_.Cells[2, 4].Value = dataGridView1.Columns["Пол"].HeaderText;
+            Sheet_.Cells[2, 5].Value = dataGridView1.Columns["Снилс"].HeaderText;
+            Sheet_.Cells[2, 6].Value = dataGridView1.Columns["Полюс"].HeaderText;
 
             //  Sheet_.Range[Sheet_.Cells[2, 1], Sheet_.Cells[2, 6]].HorizontalAlignmet = 3;
             int n = 3;
@@ -75,11 +74,11 @@ namespace registratura
             {
                 Sheet_.Cells[n, 1].Value = dataGridView1.Rows[i].Cells["Код карты"].Value;
                 Sheet_.Cells[n, 2].Value = dataGridView1.Rows[i].Cells["ФИО пациента"].Value;
-                Sheet_.Cells[n, 3].Value = dataGridView1.Rows[i].Cells["ФИО врача"].Value;
-                Sheet_.Cells[n, 4].Value = dataGridView1.Rows[i].Cells["Дата приёма"].Value;
-                Sheet_.Cells[n, 5].Value = dataGridView1.Rows[i].Cells["Симптомы"].Value;
-                Sheet_.Cells[n, 6].Value = dataGridView1.Rows[i].Cells["Диагноз"].Value;
-                Sheet_.Cells[n, 7].Value = dataGridView1.Rows[i].Cells["Лекарства"].Value;
+                Sheet_.Cells[n, 3].Value = dataGridView1.Rows[i].Cells["Дата рождения"].Value;
+                Sheet_.Cells[n, 4].Value = dataGridView1.Rows[i].Cells["Пол"].Value;
+                Sheet_.Cells[n, 5].Value = dataGridView1.Rows[i].Cells["Снилс"].Value;
+                Sheet_.Cells[n, 6].Value = dataGridView1.Rows[i].Cells["Полюс"].Value;
+    
                 n++;
             }
             Sheet_.Cells.Columns.EntireColumn.AutoFit();
@@ -106,7 +105,7 @@ namespace registratura
                 return;
             }
 
-            string sql = "Delete from med where id_med=" + kod;
+            string sql = "Delete from med where id_pac=" + kod;
             Form1.ModificationExecute(sql);
 
             for (int i = Form1.ds.Tables["Журнал"].Rows.Count - 1; i >= 0; i--)
@@ -129,7 +128,7 @@ namespace registratura
             {
                 return;
             }
-            string sql = "Delete from med";
+            string sql = "Delete from pac";
             Form1.ModificationExecute(sql);
             Form1.ds.Tables["Журнал"].Clear();
         }

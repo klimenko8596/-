@@ -153,9 +153,9 @@ namespace registratura
             Form1.TableFill("Мед. карта", "select * from med");
 
             for (int i = 0; i < Form1.ds.Tables["Мед. карта"].DefaultView.Count; i++)
-                if (Form1.ds.Tables["Мед. карта"].DefaultView[i]["id_med"].ToString() == textBox1.Text)
+                if (Form1.ds.Tables["Мед. карта"].DefaultView[i]["id_vrach"].ToString() == textBox1.Text)
                 {
-                    MessageBox.Show("Врач\"" + textBox2.Text + "\" входит в состав информации о карте с кодом " +
+                    MessageBox.Show("Врач\"" + textBox4.Text + "\" входит в состав информации о карте с кодом " +
                         Form1.ds.Tables["Мед. карта"].DefaultView[i]["id_med"].ToString(), "Ошибка удаления");
                     return;
                 }
@@ -188,5 +188,7 @@ namespace registratura
             Form1.tabControl1.Controls.Add(poisk_vrach.tabControl1.TabPages[0]);
             Form1.tabControl1.SelectedIndex = Form1.tabControl1.TabCount - 1;
         }
+
+      
     }
 }
