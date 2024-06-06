@@ -25,7 +25,7 @@ namespace registratura
         {
 
             Form1.TableFill("Журнал", "SELECT id_pac as \"Код карты\", concat(pac.fam, ' ', pac.nam, ' ', pac.otch) " +
-               "as \"ФИО\", dat_r as \"Дата рождения\"," +
+               "as \"ФИО пациента\", dat_r as \"Дата рождения\"," +
                " pol as \"Пол\", polic as \"Полюс\", snils as \"Снилс\", ser_nom as \"Серия и номер\"" +
                " FROM pac order by \"Код карты\"");
 

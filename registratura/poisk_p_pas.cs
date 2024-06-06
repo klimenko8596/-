@@ -17,49 +17,8 @@ namespace registratura
             InitializeComponent();
         }
         public static string n = null;
-   
-        private void FieldsForm_Fill()
-        {
-            int i = 0;
-            textBox1.Text = Form1.ds.Tables["Пациенты"].Rows[i]["id_pac"].ToString();
-            textBox2.Text = Form1.ds.Tables["Пациенты"].Rows[i]["fam"].ToString();
-            textBox3.Text = Form1.ds.Tables["Пациенты"].Rows[i]["pol"].ToString();
-            if (Form1.ds.Tables["Пациенты"].Rows[i]["dat_r"] != DBNull.Value)
-                dateTimePicker1.Value = Convert.ToDateTime(Form1.ds.Tables["Пациенты"].Rows[i]["dat_r"]);
-            textBox4.Text = Form1.ds.Tables["Пациенты"].Rows[i]["polic"].ToString();
-            textBox5.Text = Form1.ds.Tables["Пациенты"].Rows[i]["obl"].ToString();
-            textBox6.Text = Form1.ds.Tables["Пациенты"].Rows[i]["nam"].ToString();
-            textBox7.Text = Form1.ds.Tables["Пациенты"].Rows[i]["snils"].ToString();
-            textBox8.Text = Form1.ds.Tables["Пациенты"].Rows[i]["ser_nom"].ToString();
-            textBox9.Text = Form1.ds.Tables["Пациенты"].Rows[i]["otch"].ToString();
-            textBox10.Text = Form1.ds.Tables["Пациенты"].Rows[i]["reg"].ToString();
-            textBox11.Text = Form1.ds.Tables["Пациенты"].Rows[i]["gorod"].ToString();
-            textBox12.Text = Form1.ds.Tables["Пациенты"].Rows[i]["yl"].ToString();
-            textBox13.Text = Form1.ds.Tables["Пациенты"].Rows[i]["dom"].ToString();
-            textBox14.Text = Form1.ds.Tables["Пациенты"].Rows[i]["kvar"].ToString();
-            textBox1.Enabled = false;
-        }
-        private void FieldsForm_Clear()
-        {
-            textBox1.Text = "0";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            dateTimePicker1.ResetText();
-            textBox4.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
-            textBox7.Text = "";
-            textBox8.Text = "";
-            textBox9.Text = "";
-            textBox10.Text = "";
-            textBox11.Text = "";
-            textBox12.Text = "";
-            textBox13.Text = "";
-            textBox14.Text = "";
-            textBox1.Focus();
-            textBox1.Enabled = true;
-
-        }
+      
+     
 
 
         private void tabPage1_Enter(object sender, EventArgs e)
@@ -92,9 +51,8 @@ namespace registratura
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string sql;
-           
-                sql = "update pac set fam='" + textBox2.Text +
+            int v = Convert.ToInt32(n);
+            string sql = "update pac set fam='" + textBox2.Text +
                     "', nam='" + textBox6.Text +
                     "', otch='" + textBox9.Text +
                     "', pol='" + textBox3.Text +
@@ -111,12 +69,27 @@ namespace registratura
                     "' where id_pac=" + textBox1.Text + "";
                 Form1.ModificationExecute(sql);
 
-            
+            Form1.ds.Tables["Пациенты"].Rows[v].ItemArray = new object[] {
+                    textBox1.Text,
+                    textBox2.Text,
+                    textBox6.Text,
+                    textBox9.Text,
+                    textBox3.Text,
+                    dateTimePicker1.Value,
+                    textBox4.Text,
+                    textBox7.Text,
+                    textBox8.Text,
+                    textBox5.Text,
+                    textBox10.Text,
+                    textBox11.Text,
+                    textBox12.Text,
+                    textBox13.Text,
+                    textBox14.Text};
         }
 
             private void button6_Click(object sender, EventArgs e)
         {
-            int v = 0;
+           
 
             string message = "Вы точно хотите удалить из справочника пациента с кодом " + textBox1.Text + "?";
             string caption = "Удаление пациента";
@@ -136,16 +109,7 @@ namespace registratura
             string sql = "delete from pac where id_pac=" + textBox1.Text;
             Form1.ModificationExecute(sql);
 
-            Form1.ds.Tables["Пациенты"].Rows.RemoveAt(v);
-
-            if (Form1.ds.Tables["Пациенты"].Rows.Count > v)
-            {
-                FieldsForm_Fill();
-            }
-            else
-            {
-                FieldsForm_Clear();
-            }
+          
 
             Form1.tabControl1.Controls.Remove(Form1.tabControl1.SelectedTab);
         }
